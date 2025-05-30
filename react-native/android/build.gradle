@@ -54,6 +54,9 @@ android {
 }
 
 repositories {
+  flatDir {
+      dirs "${rootProject.projectDir}/android/app/libs"
+  }
   mavenCentral()
   google()
 
@@ -125,5 +128,5 @@ repositories {
 
 dependencies {
   api 'com.facebook.react:react-native:+'
-  implementation 'com.arthenica:ffmpeg-kit-' + safePackageName(safeExtGet('ffmpegKitPackage', 'https')) + ':' + safePackageVersion(safeExtGet('ffmpegKitPackage', 'https'))
+  implementation(name: 'ffmpeg-kit-https-6.0-2', ext: 'aar')
 }
